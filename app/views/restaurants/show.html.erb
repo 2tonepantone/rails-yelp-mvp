@@ -14,9 +14,12 @@
     <ul class="list-group list-group-flush">
       <% @restaurant.reviews.each do |review| %>
         <li class="list-group-item">
-        <%= review.content %></li>
+          <%= review.rating %> star(s): <%= review.content %>
+        </li>
       <% end %>
     </ul>
-  </div>
+    <%= link_to "+ Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-light"%>
+    </div>
     <%= link_to "⏪", restaurants_path, class: "btn btn-light"%>
+  </div>
 </div>
