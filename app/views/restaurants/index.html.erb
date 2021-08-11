@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card">
+        <div class="card-header d-flex justify-content-between">
+          <div class="restaurant-info">
+            <%= restaurant.name %></h5>
+            <h6 class="card-subtitle text-muted">
+              <%= restaurant.category %>
+            </h6>
+          </div>
+          <div>
+            <%= restaurant.address %>
+            <%= link_to "🔍", restaurant_path(restaurant), class: "btn btn-light"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
